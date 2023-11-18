@@ -10,7 +10,7 @@ namespace Customer_Models
         [Required]
         public string Name { get; set; }
         public string? Address { get; set; }
-        [RegularExpression(@"\d{10}", ErrorMessage = "Please enter a valid phone number!")]
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Invalid phone number!")]
         public long? Phone { get; set; }
 
     }
