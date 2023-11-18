@@ -7,9 +7,10 @@ namespace Customer_Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public string? Address { get; set; }
-        [DataType(DataType.PhoneNumber,ErrorMessage = "Please enter a valid phone number!")]
+        [RegularExpression(@"\d{10}", ErrorMessage = "Please enter a valid phone number!")]
         public long? Phone { get; set; }
 
     }

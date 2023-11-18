@@ -14,7 +14,7 @@ namespace Customer_Models.Dto
         [Required]
         public string Name { get; set; }
         public string? Address { get; set; }
-        [DataType(DataType.PhoneNumber, ErrorMessage = "Please enter a valid phone number!")]
+        [RegularExpression(@"\d{10}", ErrorMessage = "Please enter a valid phone number!")]
         public long? Phone { get; set; }
     }
 }
